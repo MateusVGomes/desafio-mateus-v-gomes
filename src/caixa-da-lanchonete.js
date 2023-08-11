@@ -49,13 +49,17 @@ const cardapio = [
     },
 
 ]
-
+const formasDePagamento =['debito','credito','dinheiro'];
 class CaixaDaLanchonete {
 
     calcularValorDaCompra(metodoDePagamento, itens) {
         if (itens.length === 0) {
           return "Não há itens no carrinho de compra!"
         }
+        else if(formasDePagamento.includes(metodoDePagamento)===false){
+            return "Forma de pagamento inválida!";
+        }
+        else{
         const objetoDeItens = [];
         let mensagem = "";
         itens.forEach((str) => {
@@ -86,7 +90,7 @@ class CaixaDaLanchonete {
     
           return pedidosDetalhados;
         }
-    
+    }
       }
 
     }
