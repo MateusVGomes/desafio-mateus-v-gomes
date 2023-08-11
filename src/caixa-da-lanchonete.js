@@ -55,7 +55,7 @@ class CaixaDaLanchonete {
     calcularValorDaCompra(metodoDePagamento, itens) {
         let listaDeItens = []
         let valorTotal = 0;
-        let pratoPrincipal = false;
+        let pratoPrincipal = true;
         if (itens.length === 0) {
           return "Não há itens no carrinho de compra!"
         }
@@ -95,24 +95,29 @@ class CaixaDaLanchonete {
           else {
             const pedidosDetalhados = objetoDeItens.map(pedido => {
               const itemCardapio = cardapio.find(item => item.codigo === pedido.codigo)
-              if (itemCardapio.extra === false) {
-                pratoPrincipal = true;
-                console.log('entrou')
-      
-              }
+          
               return { ...itemCardapio, quantidade: pedido.quantidade }
             });
             listaDeItens = pedidosDetalhados;
       
           }
-          if (pratoPrincipal === false) {
-            return "Item extra não pode ser pedido sem o principal";
-          }
       
-          else {
+       
             listaDeItens.forEach((obj) => {
+              if(obj.codigo==='chantily'){
+                pratoPrincipal=listaDeItens.some(obj=>obj.codigo==='cafe')
+                console.log(pratoPrincipal)
+              }
+              else if (obj.codigo=='queijo'){
+                pratoPrincipal=listaDeItens.some(obj=>obj.codigo==='sanduiche')
+              }
+              
               valorTotal += (obj.valor) * (obj.quantidade);
             })
+      
+      if(pratoPrincipal==false){
+        return "Item extra não pode ser pedido sem o principal"
+      }
       
             if (metodoDePagamento === 'credito') {
               let acrescimo = valorTotal * 0.03
@@ -131,9 +136,8 @@ class CaixaDaLanchonete {
             }
       
           }
-        }
+        
       }
-
     }
 
     function verificarItem(codigo) {
