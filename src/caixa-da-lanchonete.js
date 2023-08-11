@@ -1,3 +1,5 @@
+import Cardapio from "./cardapio";
+
 const cardapio = [
     {
         codigo: "cafe",
@@ -95,49 +97,58 @@ class CaixaDaLanchonete {
           else {
             const pedidosDetalhados = objetoDeItens.map(pedido => {
               const itemCardapio = cardapio.find(item => item.codigo === pedido.codigo)
-          
+      
               return { ...itemCardapio, quantidade: pedido.quantidade }
             });
             listaDeItens = pedidosDetalhados;
       
           }
       
-       
-            listaDeItens.forEach((obj) => {
-              if(obj.codigo==='chantily'){
-                pratoPrincipal=listaDeItens.some(obj=>obj.codigo==='cafe')
-                console.log(pratoPrincipal)
-              }
-              else if (obj.codigo=='queijo'){
-                pratoPrincipal=listaDeItens.some(obj=>obj.codigo==='sanduiche')
-              }
-              
+      
+          listaDeItens.forEach((obj) => {
+            if (obj.codigo === 'chantily') {
+              pratoPrincipal = listaDeItens.some(obj => obj.codigo === 'cafe')
+            }
+            else if (obj.codigo === 'queijo') {
+              pratoPrincipal = listaDeItens.some(obj => obj.codigo === 'sanduiche')
               valorTotal += (obj.valor) * (obj.quantidade);
-            })
-      
-      if(pratoPrincipal==false){
-        return "Item extra não pode ser pedido sem o principal"
-      }
-      
-            if (metodoDePagamento === 'credito') {
-              let acrescimo = valorTotal * 0.03
-              let valorFinal = `R$ ${(valorTotal + acrescimo).toFixed(2)}`.replace(".", ",");
-      
-              return valorFinal;
             }
-            else if (metodoDePagamento === 'dinheiro') {
-              let desconto = valorTotal * 0.05;
-              let valorFinal = `R$ ${(valorTotal - desconto).toFixed(2)}`.replace(".", ",");
-      
-              return valorFinal;
+            else if (obj.codigo === 'combo1' || obj.codigo === 'combo2') {
+              pratoPrincipal = listaDeItens.some(obj => obj.codigo === 'sanduiche' || obj.codigo === 'cafe')
+              valorTotal += (obj.valor) * (obj.quantidade);
             }
-            else {
-              return `R$ ${(valorTotal).toFixed(2)}`.replace(".", ",");
+            else{
+              valorTotal += (obj.valor) * (obj.quantidade);
             }
       
+      
+      
+          })
+      
+          if (pratoPrincipal == false) {
+            return "Item extra não pode ser pedido sem o principal"
           }
-        
+      
+          if (metodoDePagamento === 'credito') {
+            let acrescimo = valorTotal * 0.03
+            let valorFinal = `R$ ${(valorTotal + acrescimo).toFixed(2)}`.replace(".", ",");
+      
+            return valorFinal;
+          }
+          else if (metodoDePagamento === 'dinheiro') {
+            let desconto = valorTotal * 0.05;
+            let valorFinal = `R$ ${(valorTotal - desconto).toFixed(2)}`.replace(".", ",");
+      
+            return valorFinal;
+          }
+          else {
+            return `R$ ${(valorTotal).toFixed(2)}`.replace(".", ",");
+          }
+      
+        }
+      
       }
+      
     }
 
     function verificarItem(codigo) {
