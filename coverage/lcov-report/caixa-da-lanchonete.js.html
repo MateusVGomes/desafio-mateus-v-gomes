@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>91/91</span>
+                <span class='fraction'>96/96</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>91/91</span>
+                <span class='fraction'>96/96</span>
             </div>
         
             
@@ -154,7 +154,12 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -210,8 +215,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
@@ -227,113 +235,120 @@
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const cardapio = [
     {
-      codigo: "cafe",
-      descricao: "Café",
-      valor: 3.00,
-      extra: false
+        codigo: "cafe",
+        descricao: "Café",
+        valor: 3.00,
+        extra: false
     },
     {
-      codigo: "chantily",
-      descricao: "Chantily (extra do Café)",
-      valor: 1.50,
-      extra: true
+        codigo: "chantily",
+        descricao: "Chantily (extra do Café)",
+        valor: 1.50,
+        extra: true
     },
     {
-      codigo: "suco",
-      descricao: "Suco Natural",
-      valor: 6.20,
-      extra: false
+        codigo: "suco",
+        descricao: "Suco Natural",
+        valor: 6.20,
+        extra: false
     },
     {
-      codigo: "sanduiche",
-      descricao: "Sanduíche",
-      valor: 6.50,
-      extra: false
+        codigo: "sanduiche",
+        descricao: "Sanduíche",
+        valor: 6.50,
+        extra: false
     },
     {
-      codigo: "queijo",
-      descricao: "Queijo (extra do Sanduíche)",
-      valor: 2.00,
-      extra: true
+        codigo: "queijo",
+        descricao: "Queijo (extra do Sanduíche)",
+        valor: 2.00,
+        extra: true
     },
     {
-      codigo: "salgado",
-      descricao: "Salgado",
-      valor: 7.25,
-      extra: false
+        codigo: "salgado",
+        descricao: "Salgado",
+        valor: 7.25,
+        extra: false
     },
     {
-      codigo: "combo1",
-      descricao: "1 Suco e 1 Sanduíche",
-      valor: 9.50,
-      extra: false
+        codigo: "combo1",
+        descricao: "1 Suco e 1 Sanduíche",
+        valor: 9.50,
+        extra: false
     },
     {
-      codigo: "combo2",
-      descricao: "1 Café e 1 Sanduíche",
-      valor: 7.50,
-      extra: false
+        codigo: "combo2",
+        descricao: "1 Café e 1 Sanduíche",
+        valor: 7.50,
+        extra: false
     },
-  
-  ] 
+&nbsp;
+]
 &nbsp;
 class CaixaDaLanchonete {
 &nbsp;
     calcularValorDaCompra(metodoDePagamento, itens) {
+        if (itens.length === 0) {
+          return "Não há itens no carrinho de compra!"
+        }
         const objetoDeItens = [];
-  let mensagem = "";
-  itens.forEach((str) =&gt; {
-    let arr = str.split(",");
-    let atual = parseFloat(arr[1]);
-       if (atual&lt;=0||mensagem!=""){
-             mensagem = "Quantidade inválida!";
-           return mensagem;
-    }
+        let mensagem = "";
+        itens.forEach((str) =&gt; {
+          let arr = str.split(",");
+          let atual = parseFloat(arr[1]);
+          if (atual &lt;= 0 || mensagem != "") {
+            mensagem = "Quantidade inválida!";
+            return mensagem;
+          }
     
-    else{
-&nbsp;
-    objetoDeItens.push({
-      codigo: arr[0],
-      quantidade: arr[1]
-    })
-      
+          else {
+    
+            objetoDeItens.push({
+              codigo: arr[0],
+              quantidade: arr[1]
+            })
+    
+          }
+        })
+        if (mensagem !== "") {
+          return mensagem;
+        }
+        else {
+          const pedidosDetalhados = objetoDeItens.map(pedido =&gt; {
+            const itemCardapio = cardapio.find(item =&gt; item.codigo === pedido.codigo)
+            return { ...itemCardapio, quantidade: pedido.quantidade }
+          });
+    
+          return pedidosDetalhados;
+        }
+    
       }
-  })
-if(mensagem!==""){
-  return mensagem;
-}
-else{
-  const pedidosDetalhados = objetoDeItens.map(pedido =&gt; {
-    const itemCardapio = cardapio.find(item =&gt; item.codigo === pedido.codigo)
-    return { ...itemCardapio, quantidade: pedido.quantidade }
-  });
-&nbsp;
-  return pedidosDetalhados;
-}
 &nbsp;
     }
 &nbsp;
-}
+&nbsp;
 &nbsp;
 export { CaixaDaLanchonete };
 &nbsp;</pre></td></tr></table></pre>
@@ -343,7 +358,7 @@ export { CaixaDaLanchonete };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-11T16:58:30.652Z
+                at 2023-08-11T17:10:38.388Z
             </div>
         <script src="prettify.js"></script>
         <script>
