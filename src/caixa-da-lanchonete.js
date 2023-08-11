@@ -53,6 +53,8 @@ const formasDePagamento =['debito','credito','dinheiro'];
 class CaixaDaLanchonete {
 
     calcularValorDaCompra(metodoDePagamento, itens) {
+        let listaDeItens=[]
+        let valorTotal=0;
         if (itens.length === 0) {
           return "Não há itens no carrinho de compra!"
         }
@@ -74,7 +76,7 @@ class CaixaDaLanchonete {
     
             objetoDeItens.push({
               codigo: arr[0],
-              quantidade: arr[1]
+              quantidade: parseFloat(arr[1])
             })
     
           }
@@ -87,9 +89,30 @@ class CaixaDaLanchonete {
             const itemCardapio = cardapio.find(item => item.codigo === pedido.codigo)
             return { ...itemCardapio, quantidade: pedido.quantidade }
           });
-    
-          return pedidosDetalhados;
+    listaDeItens=pedidosDetalhados;
+      
         }
+        
+        listaDeItens.forEach((obj,index)=>{
+          valorTotal+=(obj.valor)*(obj.quantidade);
+        })
+       
+        if(metodoDePagamento==='credito'){
+               let acrescimo=valorTotal*0.03
+               let valorFinal=`R$ ${(valorTotal+acrescimo).toFixed(2)}`.replace(".",",");
+               
+               return valorFinal;
+        }
+        else if(metodoDePagamento==='dinheiro'){
+          let desconto=valorTotal*0.05;
+          let valorFinal=`R$ ${(valorTotal-desconto).toFixed(2)}`.replace(".",",");
+          
+          return valorFinal;
+        }
+        else{
+          return `R$ ${(valorTotal).toFixed(2)}`.replace(".",",");
+        }
+        
     }
       }
 
