@@ -11,7 +11,8 @@ class Cardapio{
             codigo: "chantily",
             descricao: "Chantily (extra do Café)",
             valor: 1.50,
-            extra: true
+            extra: true,
+            dependencia:['cafe']
         },
         {
             codigo: "suco",
@@ -29,7 +30,8 @@ class Cardapio{
             codigo: "queijo",
             descricao: "Queijo (extra do Sanduíche)",
             valor: 2.00,
-            extra: true
+            extra: true,
+            dependencia:['sanduiche']
         },
         {
             codigo: "salgado",
@@ -41,13 +43,15 @@ class Cardapio{
             codigo: "combo1",
             descricao: "1 Suco e 1 Sanduíche",
             valor: 9.50,
-            extra: false
+            extra: true,
+            dependencia:["cafe","suco","sanduiche","salgado"]
         },
         {
             codigo: "combo2",
             descricao: "1 Café e 1 Sanduíche",
             valor: 7.50,
-            extra: false
+            extra: true,
+            dependencia:["cafe","suco","sanduiche","salgado"]
         },
     
     ]
