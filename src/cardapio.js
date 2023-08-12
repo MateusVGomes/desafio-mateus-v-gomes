@@ -1,6 +1,6 @@
 class Cardapio{
-constructor(){
-    const cardapio = [
+
+   cardapio = [
         {
             codigo: "cafe",
             descricao: "Café",
@@ -51,7 +51,7 @@ constructor(){
         },
     
     ]
-}
+
 
    getCardapio(){
     return this.cardapio;
